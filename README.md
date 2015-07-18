@@ -1,6 +1,5 @@
 # Summary
-This package provides a Meteor server method called `exportcsv-export` which will format a data set into a CSV string
-and store the string as a Collection FS File using Grid FS Store.
+This package provides a Meteor server method called `exportcsv-export` which will format a data set into a CSV string and store the string as a Collection FS File using Grid FS Store.
 
 The package uses [Papa Parse](http://papaparse.com/docs#json-to-csv) to parse JSON to CSV
 
@@ -13,13 +12,11 @@ You can call `exportcsv-export` from your client code like such
 * An array of objects
 * An object explicitly defining fields and data
 
-The package also has a public Mongo Collection called `ExportCSV.Exports` which you can use to find and download 
-Collection FS files.
+The package also has a public Mongo Collection called `ExportCSV.Exports` which you can use to find and download Collection FS files.
 
 ## Example Client Calling Export Method
 
-This snippet of a Meteor Template event shows calling the Meteor method `exportcsv-export` with by calling fetch() on a
-Mongo.Collection cursor. If the return of 'export' is successful, a serialized FS.File object will be returned.
+This snippet of a Meteor Template event shows calling the Meteor method `exportcsv-export` with by calling fetch() on a Mongo.Collection cursor. If the return of 'export' is successful, a serialized FS.File object will be returned.
 
 Note: If you want an FS.File object, you can retrieve it by calling `ExportCSV.Exports.find` (see next example).
 
@@ -41,11 +38,9 @@ Template.exportInvitesList.events({
     
 ## Example of Client Retrieving Exported File
 
-This snippet of a Meteor Template helper retrieves an FS.File object from `ExportCSV.Exports` collection using the ID stored
-in the Session variable that was saved after calling `exportcsv-export` (see previous example). 
+This snippet of a Meteor Template helper retrieves an FS.File object from `ExportCSV.Exports` collection using the ID stored in the Session variable that was saved after calling `exportcsv-export` (see previous example). 
 
-Note: Calling 'export' method will return a plain JSON object instead of an FS.File object which has methods added by 
-Collection FS such as url() which you can use to download the file.
+Note: Calling 'export' method will return a plain JSON object instead of an FS.File object which has methods added by Collection FS such as url() which you can use to download the file.
 
 ```
 Template.exportInvitesList.helpers({
