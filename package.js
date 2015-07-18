@@ -18,7 +18,7 @@ Package.onUse(function(api) {
     api.use('cfs:standard-packages');
     api.use('cfs:gridfs');
     
-    api.export('Exports');
+    api.export('ExportCSV');
 });
 
 Package.onTest(function(api) {

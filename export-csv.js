@@ -1,17 +1,18 @@
 // Write your package code here!
-
-Exports = new FS.Collection("exports", {
-  stores: [new FS.Store.GridFS("exports")]
-});
+ExportCSV = {
+    Exports : new FS.Collection("exportcsv-exports", {
+        stores: [new FS.Store.GridFS("exportcsv-exports")]
+    })
+};
 
 if(Meteor.isServer){
     var fs = Npm.require('fs');
     
     Meteor.publish(null, function(){
-        return Exports.find();
+        return ExportCSV.Exports.find();
     });
     
-    Exports.allow({
+    ExportCSV.Exports.allow({
         insert: function(){
             return true;
         },
@@ -20,7 +21,7 @@ if(Meteor.isServer){
         }
     });
     
-    Exports.deny({
+    ExportCSV.Exports.deny({
         update: function(){
             return true;
         },
@@ -30,7 +31,7 @@ if(Meteor.isServer){
     });
 
     Meteor.methods({
-        "export": function(data){
+        "exportcsv-export": function(data){
 
             var csv;
 
@@ -45,9 +46,9 @@ if(Meteor.isServer){
 
             fs.writeFileSync(fullname, csv);
 
-            Exports.insert(fullname);
+            ExportCSV.Exports.insert(fullname);
             
-            return Exports.findOne({'original.name': basename});
+            return ExportCSV.Exports.findOne({'original.name': basename});
         }
     });
 }
