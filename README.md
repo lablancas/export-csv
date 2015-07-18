@@ -34,8 +34,8 @@ Note: If you want an FS.File object, you can retrieve it by calling `ExportCSV.E
             else
                 Session.set(template.data.name + "-exported", exported);
                 
-        });
-    }});
+    });
+}});
 ```
     
 ## Example of Client Retrieving Exported File
@@ -46,18 +46,20 @@ in the Session variable that was saved after calling `exportcsv-export` (see pre
 Note: Calling 'export' method will return a plain JSON object instead of an FS.File object which has methods added by 
 Collection FS such as url() which you can use to download the file.
 
-```Template.exportInvitesList.helpers({
+```
+Template.exportInvitesList.helpers({
     exportReady: function(){
         
         var exported = Session.get(this.name + "-exported");
         
         return exported ? ExportCSV.Exports.findOne(exported._id) : undefined;
-    }});
+}});
 ```
     
 In case needed, here is the template that works with the above to examples
 
-```<template name="exportInvitesList">
+```
+<template name="exportInvitesList">
     <a class="btn-flat waves-effect waves-deep-orange export-invites">
         <i class="material-icons">refresh</i>
     </a>
