@@ -1,6 +1,6 @@
 # Summary
 This package provides a Meteor server method called `exportcsv-export` which will format a data set into a CSV string
-and store the string as a Collection FS File using Grid FS Store.and
+and store the string as a Collection FS File using Grid FS Store.
 
 The package uses [Papa Parse](http://papaparse.com/docs#json-to-csv) to parse JSON to CSV
 
