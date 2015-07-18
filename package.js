@@ -14,9 +14,9 @@ Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
   api.addFiles('export-csv.js');
     
-    api.use('harrison:babyparse');
-    api.use('cfs:standard-packages');
-    api.use('cfs:gridfs');
+    api.use('harrison:babyparse@1.0.1');
+    api.use('cfs:standard-packages@0.5.9');
+    api.use('cfs:gridfs@0.0.33');
     
     api.export('ExportCSV');
 });
