@@ -23,7 +23,8 @@ Mongo.Collection cursor. If the return of 'export' is successful, a serialized F
 
 Note: If you want an FS.File object, you can retrieve it by calling `ExportCSV.Exports.find` (see next example).
 
-```Template.exportInvitesList.events({
+```
+Template.exportInvitesList.events({
     'click .export-invites': function(events, template){
         Session.set(template.data.name + "-exported", undefined);
         
