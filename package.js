@@ -2,7 +2,7 @@ Package.describe({
   name: 'lablancas:export-csv',
   version: '0.0.1',
   // Brief, one-line summary of the package.
-  summary: 'Meteor package for exporting a data set in CSV file format and storing the file into Collection FS GridFS Store',
+  summary: 'Export a data set in CSV file format and storing the file into Collection FS GridFS Store',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/lablancas/export-csv',
   // By default, Meteor will default to using README.md for documentation.
